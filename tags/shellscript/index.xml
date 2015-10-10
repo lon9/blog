@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Zepher.me</title>
-    <link>http://localhost:0080/post/</link>
-    <description>Recent content in Posts on Zepher.me</description>
+    <title>Shellscript on Zepher.me</title>
+    <link>http://localhost:0080/tags/shellscript/</link>
+    <description>Recent content in Shellscript on Zepher.me</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 10 Oct 2015 22:16:32 +0900</lastBuildDate>
-    <atom:link href="http://localhost:0080/post/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:0080/tags/shellscript/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Push submodules together with main module</title>
