@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Abouts on Zepher.me</title>
-    <link>http://localhost:0080/about/</link>
+    <link>http://blog.zepher.me/about/</link>
     <description>Recent content in Abouts on Zepher.me</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 22 Aug 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:0080/about/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://blog.zepher.me/about/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>About me</title>
-      <link>http://localhost:0080/about/</link>
+      <link>http://blog.zepher.me/about/</link>
       <pubDate>Sat, 22 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:0080/about/</guid>
+      <guid>http://blog.zepher.me/about/</guid>
       <description>&lt;p&gt;You can add custom pages like this by adding &lt;code&gt;menu = &amp;quot;main&amp;quot;&lt;/code&gt; in the frontmatter:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;+++
