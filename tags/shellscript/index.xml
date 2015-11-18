@@ -6,8 +6,55 @@
     <description>Recent content in Shellscript on Zepher.log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Oct 2015 22:16:32 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2015 01:28:32 +0900</lastBuildDate>
     <atom:link href="https://Rompei.github.io/blog/tags/shellscript/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How To Flow Text In Shell</title>
+      <link>https://rompei.github.io/blog/post/How-To-Flow-Text-In-Shell/</link>
+      <pubDate>Thu, 19 Nov 2015 01:28:32 +0900</pubDate>
+      
+      <guid>https://rompei.github.io/blog/post/How-To-Flow-Text-In-Shell/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://gyazo.com/7dda31251c37e8fd41439324b423160d&#34;&gt;&lt;img src=&#34;https://i.gyazo.com/7dda31251c37e8fd41439324b423160d.gif&#34; alt=&#34;https://gyazo.com/7dda31251c37e8fd41439324b423160d&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This snippet flows some text in your shell.  It use in the last of presentation or something.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;#!/bin/bash
+
+CMD_NAME=`basename $0`
+SPACE=`tput cols`
+FILE_NAME=
+
+if [ $# -ne 1 ]; then
+  echo &amp;quot;USAGE: $CMD_NAME file_name&amp;quot;
+  exit 1
+fi
+
+# Trapping signals
+trap &#39;tput smam; exit 1&#39; 1 2 3 15
+
+FILE_NAME=$1
+
+while [ $SPACE -gt 0 ];
+do
+  while IFS=&#39;&#39; read LINE
+  do
+    [[ $SPACE &amp;gt; 0 ]] &amp;amp;&amp;amp; printf &amp;quot;%${SPACE}s&amp;quot; &#39; &#39;
+    tput rmam; printf &amp;quot;%s\n&amp;quot; &amp;quot;$LINE&amp;quot;
+  done &amp;lt; $FILE_NAME
+  SPACE=$(( SPACE - 1 ))
+  sleep 0.02
+  if [ $SPACE -gt 0 ]; then
+    clear
+  fi
+done
+
+tput smam
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;And then type &lt;code&gt;./flow_text &amp;lt;text-file&amp;gt;&lt;/code&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Push submodules together with main module</title>
