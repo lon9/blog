@@ -2,33 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Abouts on Zepher.log</title>
-    <link>https://Rompei.github.io/blog/about/</link>
+    <link>http://localhost:1313/blog/about/</link>
     <description>Recent content in Abouts on Zepher.log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 22 Aug 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://Rompei.github.io/blog/about/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/blog/about/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>About me</title>
-      <link>https://rompei.github.io/blog/about/</link>
+      <link>http://localhost:1313/blog/about/</link>
       <pubDate>Sat, 22 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://rompei.github.io/blog/about/</guid>
-      <description>&lt;p&gt;You can add custom pages like this by adding &lt;code&gt;menu = &amp;quot;main&amp;quot;&lt;/code&gt; in the frontmatter:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;+++
-date  = &amp;quot;2015-08-22&amp;quot;
-title = &amp;quot;About me&amp;quot;
-menu  = &amp;quot;main&amp;quot;
-+++
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This site is just a usual document. Create a new subfolder in &lt;code&gt;content&lt;/code&gt; and name this document &lt;code&gt;index.md&lt;/code&gt;. For example, I&amp;rsquo;m located under &lt;code&gt;content/about/index.md&lt;/code&gt; to add indicate the subsection &lt;code&gt;/about&lt;/code&gt; in the URL.&lt;/p&gt;
-
-&lt;p&gt;But you can also link posts that way without moving them.&lt;/p&gt;
-
-&lt;p&gt;If no document contains &lt;code&gt;menu = &amp;quot;main&amp;quot;&lt;/code&gt; in the frontmatter the navigation will not be shown. Sounds easy, right?  ``&amp;rdquo;&lt;/p&gt;
+      <guid>http://localhost:1313/blog/about/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m undergraduate of depertment of informatics, now interested in information security.&lt;br /&gt;
+Language: Go, Python, C, Java, Android, JavaScript&lt;/p&gt;
 </description>
     </item>
     

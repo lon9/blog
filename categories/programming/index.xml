@@ -2,19 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Programming on Zepher.log</title>
-    <link>https://Rompei.github.io/blog/categories/programming/</link>
+    <link>http://localhost:1313/blog/categories/programming/</link>
     <description>Recent content in Programming on Zepher.log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Oct 2015 22:16:32 +0900</lastBuildDate>
-    <atom:link href="https://Rompei.github.io/blog/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Nov 2015 00:23:49 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How To Use Twitter Streaming API With Go</title>
+      <link>http://localhost:1313/blog/post/How-To-Use-Twitter-Streaming-API-With-Go/</link>
+      <pubDate>Thu, 19 Nov 2015 00:23:49 +0900</pubDate>
+      
+      <guid>http://localhost:1313/blog/post/How-To-Use-Twitter-Streaming-API-With-Go/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/ChimeraCoder/anaconda&#34;&gt;ChimeraCoder/anaconda&lt;/a&gt; is Twitter API client written with Golang.  This library support Twitter Streaming API, Here is a example for using Twitter Streaming API&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+import(
+    &amp;quot;github.com/ChimeraCoder/anaconda&amp;quot;
+    &amp;quot;net/url&amp;quot;
+    &amp;quot;fmt&amp;quot;
+)
+
+func main(){
+    anaconda.SetConsumerKey(&amp;lt;Consumer Key&amp;gt;)
+    anaconda.SetConsumerSecret(&amp;lt;Consumer Secret&amp;gt;)
+    client := anaconda.NewTwitterApi(&amp;lt;Access Token&amp;gt;, &amp;lt;Access Token Secret&amp;gt;)
+
+    // Setting parameter using url.Values
+    v := url.Values{}
+    v.Set(&amp;quot;locations&amp;quot;, &amp;quot;&amp;lt;Locations&amp;gt;&amp;quot;) // or v.Set(&amp;quot;track&amp;quot;, &amp;quot;&amp;lt;track&amp;gt;&amp;quot;)
+    s := client.PublicFilterStream(v)
+
+    for{
+      item := &amp;lt;-s.C
+      switch status := item.(type){
+      case anaconda.Tweet:
+        fmt.Println(status.Text)     
+			deafult:
+      }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That&amp;rsquo;s it.&lt;br /&gt;
+It using goroutine, so we can take tweet whenever we like.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Push submodules together with main module</title>
-      <link>https://rompei.github.io/blog/post/Push-submodules-together-with-main-module/</link>
+      <link>http://localhost:1313/blog/post/Push-submodules-together-with-main-module/</link>
       <pubDate>Sat, 10 Oct 2015 22:16:32 +0900</pubDate>
       
-      <guid>https://rompei.github.io/blog/post/Push-submodules-together-with-main-module/</guid>
+      <guid>http://localhost:1313/blog/post/Push-submodules-together-with-main-module/</guid>
       <description>&lt;p&gt;This blog is controlled as submodule of &lt;code&gt;hugo&lt;/code&gt;, CMS written with Golang, on Github.  So I want to push this blog with main CMS module, when I write a post and build blog templates.&lt;br /&gt;
 Then I wrote a ShellScript to do this.&lt;/p&gt;
 

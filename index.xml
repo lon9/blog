@@ -2,19 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Zepher.log</title>
-    <link>https://Rompei.github.io/blog/</link>
+    <link>http://localhost:1313/blog/</link>
     <description>Recent content on Zepher.log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 Oct 2015 22:16:32 +0900</lastBuildDate>
-    <atom:link href="https://Rompei.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Nov 2015 00:23:49 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How To Use Twitter Streaming API With Go</title>
+      <link>http://localhost:1313/blog/post/How-To-Use-Twitter-Streaming-API-With-Go/</link>
+      <pubDate>Thu, 19 Nov 2015 00:23:49 +0900</pubDate>
+      
+      <guid>http://localhost:1313/blog/post/How-To-Use-Twitter-Streaming-API-With-Go/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://github.com/ChimeraCoder/anaconda&#34;&gt;ChimeraCoder/anaconda&lt;/a&gt; is Twitter API client written with Golang.  This library support Twitter Streaming API, Here is a example for using Twitter Streaming API&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-go&#34;&gt;package main
+
+import(
+    &amp;quot;github.com/ChimeraCoder/anaconda&amp;quot;
+    &amp;quot;net/url&amp;quot;
+    &amp;quot;fmt&amp;quot;
+)
+
+func main(){
+    anaconda.SetConsumerKey(&amp;lt;Consumer Key&amp;gt;)
+    anaconda.SetConsumerSecret(&amp;lt;Consumer Secret&amp;gt;)
+    client := anaconda.NewTwitterApi(&amp;lt;Access Token&amp;gt;, &amp;lt;Access Token Secret&amp;gt;)
+
+    // Setting parameter using url.Values
+    v := url.Values{}
+    v.Set(&amp;quot;locations&amp;quot;, &amp;quot;&amp;lt;Locations&amp;gt;&amp;quot;) // or v.Set(&amp;quot;track&amp;quot;, &amp;quot;&amp;lt;track&amp;gt;&amp;quot;)
+    s := client.PublicFilterStream(v)
+
+    for{
+      item := &amp;lt;-s.C
+      switch status := item.(type){
+      case anaconda.Tweet:
+        fmt.Println(status.Text)     
+			deafult:
+      }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That&amp;rsquo;s it.&lt;br /&gt;
+It using goroutine, so we can take tweet whenever we like.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Push submodules together with main module</title>
-      <link>https://rompei.github.io/blog/post/Push-submodules-together-with-main-module/</link>
+      <link>http://localhost:1313/blog/post/Push-submodules-together-with-main-module/</link>
       <pubDate>Sat, 10 Oct 2015 22:16:32 +0900</pubDate>
       
-      <guid>https://rompei.github.io/blog/post/Push-submodules-together-with-main-module/</guid>
+      <guid>http://localhost:1313/blog/post/Push-submodules-together-with-main-module/</guid>
       <description>&lt;p&gt;This blog is controlled as submodule of &lt;code&gt;hugo&lt;/code&gt;, CMS written with Golang, on Github.  So I want to push this blog with main CMS module, when I write a post and build blog templates.&lt;br /&gt;
 Then I wrote a ShellScript to do this.&lt;/p&gt;
 
@@ -73,24 +115,12 @@ git push -u origin master
     
     <item>
       <title>About me</title>
-      <link>https://rompei.github.io/blog/about/</link>
+      <link>http://localhost:1313/blog/about/</link>
       <pubDate>Sat, 22 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>https://rompei.github.io/blog/about/</guid>
-      <description>&lt;p&gt;You can add custom pages like this by adding &lt;code&gt;menu = &amp;quot;main&amp;quot;&lt;/code&gt; in the frontmatter:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-toml&#34;&gt;+++
-date  = &amp;quot;2015-08-22&amp;quot;
-title = &amp;quot;About me&amp;quot;
-menu  = &amp;quot;main&amp;quot;
-+++
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This site is just a usual document. Create a new subfolder in &lt;code&gt;content&lt;/code&gt; and name this document &lt;code&gt;index.md&lt;/code&gt;. For example, I&amp;rsquo;m located under &lt;code&gt;content/about/index.md&lt;/code&gt; to add indicate the subsection &lt;code&gt;/about&lt;/code&gt; in the URL.&lt;/p&gt;
-
-&lt;p&gt;But you can also link posts that way without moving them.&lt;/p&gt;
-
-&lt;p&gt;If no document contains &lt;code&gt;menu = &amp;quot;main&amp;quot;&lt;/code&gt; in the frontmatter the navigation will not be shown. Sounds easy, right?  ``&amp;rdquo;&lt;/p&gt;
+      <guid>http://localhost:1313/blog/about/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;m undergraduate of depertment of informatics, now interested in information security.&lt;br /&gt;
+Language: Go, Python, C, Java, Android, JavaScript&lt;/p&gt;
 </description>
     </item>
     
