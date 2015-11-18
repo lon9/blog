@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Abouts on Zepher.log</title>
-    <link>http://localhost:1313/blog/about/</link>
+    <link>https://Rompei.github.io/blog/about/</link>
     <description>Recent content in Abouts on Zepher.log</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 22 Aug 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/about/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://Rompei.github.io/blog/about/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>About me</title>
-      <link>http://localhost:1313/blog/about/</link>
+      <link>https://rompei.github.io/blog/about/</link>
       <pubDate>Sat, 22 Aug 2015 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:1313/blog/about/</guid>
+      <guid>https://rompei.github.io/blog/about/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m undergraduate of depertment of informatics, now interested in information security.&lt;br /&gt;
 Language: Go, Python, C, Java, Android, JavaScript&lt;/p&gt;
 </description>

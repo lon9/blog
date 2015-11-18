@@ -2,23 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://localhost:1313/blog/</loc>
+    <loc>https://rompei.github.io/blog/</loc>
     <lastmod>2015-11-19T00:23:49+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/post/How-To-Use-Twitter-Streaming-API-With-Go/</loc>
+    <loc>https://rompei.github.io/blog/post/How-To-Use-Twitter-Streaming-API-With-Go/</loc>
     <lastmod>2015-11-19T00:23:49+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/post/Push-submodules-together-with-main-module/</loc>
+    <loc>https://rompei.github.io/blog/post/Push-submodules-together-with-main-module/</loc>
     <lastmod>2015-10-10T22:16:32+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://localhost:1313/blog/about/</loc>
+    <loc>https://rompei.github.io/blog/about/</loc>
     <lastmod>2015-08-22T00:00:00+00:00</lastmod>
   </url>
   
