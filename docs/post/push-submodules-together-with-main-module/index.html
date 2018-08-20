@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+
+
+        <title>Push submodules together with main module</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+        <section id="page-title">
+            <h1><a href="/">blog</a></h1>
+        </section>
+
+
+
+<section class="blog-post">
+    <h1>Push submodules together with main module</h1>
+    <div class="blog-post-subheader">
+        October 10, 2015
+    </div>
+    <div class="blog-post-content">
+        <p>This blog is controlled as submodule of <code>hugo</code>, CMS written with Golang, on Github.  So I want to push this blog with main CMS module, when I write a post and build blog templates.<br />
+Then I wrote a ShellScript to do this.</p>
+
+<pre><code class="language-sh">#!/bin/sh
+
+# For pushing to Github
+
+CMDNAME=`basename $0`
+MSG=&quot;Content updated&quot;
+USAGE=&quot;Usage :$CMDNAME [-m &lt;commit-message&gt;]&quot;
+
+
+while :
+do
+  case $1 in
+    -m) shift
+      if [ &quot;$1&quot; = &quot;&quot; ]; then
+        echo &quot;$USAGE&quot; 1&gt;&amp;2
+        exit 1
+      else
+        MSG=$1
+      fi
+      break
+      ;;
+    --)shift
+      break
+      ;;
+    -*) echo &quot;$USAGE&quot; 1&gt;&amp;2
+      exit 1
+      ;;
+    *) break
+      ;;
+  esac
+done
+
+echo &quot;Commit submodules...&quot;
+git submodule foreach git add -A
+git submodule foreach git commit -m &quot;$MSG&quot;
+
+echo &quot;Commit main module...&quot;
+git add -A
+git commit -m &quot;$MSG&quot;
+
+echo &quot;Push all&quot;
+git submodule foreach git push -u origin master
+git push -u origin master
+</code></pre>
+
+<p><code>-m</code> option allow you to add commit message like this.</p>
+
+<p><code>./push -m &quot;First commit&quot;</code></p>
+
+<p>This will write same message for sub and main modules.</p>
+
+    </div>
+</section>
+
+    </body>
+</html>

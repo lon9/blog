@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on blog</title>
+    <link>http://example.org/post/</link>
+    <description>Recent content in Posts on blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Nov 2015 01:28:32 +0900</lastBuildDate>
+    
+	<atom:link href="http://example.org/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How To Flow Text In Shell</title>
+      <link>http://example.org/post/how-to-flow-text-in-shell/</link>
+      <pubDate>Thu, 19 Nov 2015 01:28:32 +0900</pubDate>
+      
+      <guid>http://example.org/post/how-to-flow-text-in-shell/</guid>
+      <description>This snippet flows some text in your shell. It use in the last of presentation or something.
+#!/bin/bash CMD_NAME=`basename $0` SPACE=`tput cols` FILE_NAME= if [ $# -ne 1 ]; then echo &amp;quot;USAGE: $CMD_NAME file_name&amp;quot; exit 1 fi # Trapping signals trap &#39;tput smam; exit 1&#39; 1 2 3 15 FILE_NAME=$1 while [ $SPACE -gt 0 ]; do while IFS=&#39;&#39; read LINE do [[ $SPACE &amp;gt; 0 ]] &amp;amp;&amp;amp; printf &amp;quot;%${SPACE}s&amp;quot; &#39; &#39; tput rmam; printf &amp;quot;%s\n&amp;quot; &amp;quot;$LINE&amp;quot; done &amp;lt; $FILE_NAME SPACE=$(( SPACE - 1 )) sleep 0.</description>
+    </item>
+    
+    <item>
+      <title>How To Use Twitter Streaming API With Go</title>
+      <link>http://example.org/post/how-to-use-twitter-streaming-api-with-go/</link>
+      <pubDate>Thu, 19 Nov 2015 00:23:49 +0900</pubDate>
+      
+      <guid>http://example.org/post/how-to-use-twitter-streaming-api-with-go/</guid>
+      <description>ChimeraCoder/anaconda is Twitter API client written with Golang. This library support Twitter Streaming API, Here is a example for using Twitter Streaming API
+package main import( &amp;quot;github.com/ChimeraCoder/anaconda&amp;quot; &amp;quot;net/url&amp;quot; &amp;quot;fmt&amp;quot; ) func main(){ anaconda.SetConsumerKey(&amp;lt;Consumer Key&amp;gt;) anaconda.SetConsumerSecret(&amp;lt;Consumer Secret&amp;gt;) client := anaconda.NewTwitterApi(&amp;lt;Access Token&amp;gt;, &amp;lt;Access Token Secret&amp;gt;) // Setting parameter using url.Values v := url.Values{} v.Set(&amp;quot;locations&amp;quot;, &amp;quot;&amp;lt;Locations&amp;gt;&amp;quot;) // or v.Set(&amp;quot;track&amp;quot;, &amp;quot;&amp;lt;track&amp;gt;&amp;quot;) s := client.PublicFilterStream(v) for{ item := &amp;lt;-s.C switch status := item.(type){ case anaconda.Tweet: fmt.</description>
+    </item>
+    
+    <item>
+      <title>Push submodules together with main module</title>
+      <link>http://example.org/post/push-submodules-together-with-main-module/</link>
+      <pubDate>Sat, 10 Oct 2015 22:16:32 +0900</pubDate>
+      
+      <guid>http://example.org/post/push-submodules-together-with-main-module/</guid>
+      <description>This blog is controlled as submodule of hugo, CMS written with Golang, on Github. So I want to push this blog with main CMS module, when I write a post and build blog templates.
+Then I wrote a ShellScript to do this.
+#!/bin/sh # For pushing to Github CMDNAME=`basename $0` MSG=&amp;quot;Content updated&amp;quot; USAGE=&amp;quot;Usage :$CMDNAME [-m &amp;lt;commit-message&amp;gt;]&amp;quot; while : do case $1 in -m) shift if [ &amp;quot;$1&amp;quot; = &amp;quot;&amp;quot; ]; then echo &amp;quot;$USAGE&amp;quot; 1&amp;gt;&amp;amp;2 exit 1 else MSG=$1 fi break ;; --)shift break ;; -*) echo &amp;quot;$USAGE&amp;quot; 1&amp;gt;&amp;amp;2 exit 1 ;; *) break ;; esac done echo &amp;quot;Commit submodules.</description>
+    </item>
+    
+  </channel>
+</rss>

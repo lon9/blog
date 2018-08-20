@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+
+
+        <title>How To Use Twitter Streaming API With Go</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+        <section id="page-title">
+            <h1><a href="/">blog</a></h1>
+        </section>
+
+
+
+<section class="blog-post">
+    <h1>How To Use Twitter Streaming API With Go</h1>
+    <div class="blog-post-subheader">
+        November 19, 2015
+    </div>
+    <div class="blog-post-content">
+        <p><a href="https://github.com/ChimeraCoder/anaconda">ChimeraCoder/anaconda</a> is Twitter API client written with Golang.  This library support Twitter Streaming API, Here is a example for using Twitter Streaming API</p>
+
+<pre><code class="language-go">package main
+
+import(
+    &quot;github.com/ChimeraCoder/anaconda&quot;
+    &quot;net/url&quot;
+    &quot;fmt&quot;
+)
+
+func main(){
+    anaconda.SetConsumerKey(&lt;Consumer Key&gt;)
+    anaconda.SetConsumerSecret(&lt;Consumer Secret&gt;)
+    client := anaconda.NewTwitterApi(&lt;Access Token&gt;, &lt;Access Token Secret&gt;)
+
+    // Setting parameter using url.Values
+    v := url.Values{}
+    v.Set(&quot;locations&quot;, &quot;&lt;Locations&gt;&quot;) // or v.Set(&quot;track&quot;, &quot;&lt;track&gt;&quot;)
+    s := client.PublicFilterStream(v)
+
+    for{
+      item := &lt;-s.C
+      switch status := item.(type){
+      case anaconda.Tweet:
+        fmt.Println(status.Text)     
+			deafult:
+      }
+    }
+}
+</code></pre>
+
+<p>That&rsquo;s it.<br />
+It using goroutine, so we can take tweet whenever we like.</p>
+
+    </div>
+</section>
+
+    </body>
+</html>

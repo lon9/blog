@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono" rel="stylesheet">
+
+
+        <title>How To Flow Text In Shell</title>
+
+        <link rel="stylesheet" href="/css/stylesheet.css">
+    </head>
+    <body>
+        <section id="page-title">
+            <h1><a href="/">blog</a></h1>
+        </section>
+
+
+
+<section class="blog-post">
+    <h1>How To Flow Text In Shell</h1>
+    <div class="blog-post-subheader">
+        November 19, 2015
+    </div>
+    <div class="blog-post-content">
+        <p><a href="https://gyazo.com/7dda31251c37e8fd41439324b423160d"><img src="https://i.gyazo.com/7dda31251c37e8fd41439324b423160d.gif" alt="https://gyazo.com/7dda31251c37e8fd41439324b423160d" /></a></p>
+
+<p>This snippet flows some text in your shell.  It use in the last of presentation or something.</p>
+
+<pre><code class="language-bash">#!/bin/bash
+
+CMD_NAME=`basename $0`
+SPACE=`tput cols`
+FILE_NAME=
+
+if [ $# -ne 1 ]; then
+  echo &quot;USAGE: $CMD_NAME file_name&quot;
+  exit 1
+fi
+
+# Trapping signals
+trap 'tput smam; exit 1' 1 2 3 15
+
+FILE_NAME=$1
+
+while [ $SPACE -gt 0 ];
+do
+  while IFS='' read LINE
+  do
+    [[ $SPACE &gt; 0 ]] &amp;&amp; printf &quot;%${SPACE}s&quot; ' '
+    tput rmam; printf &quot;%s\n&quot; &quot;$LINE&quot;
+  done &lt; $FILE_NAME
+  SPACE=$(( SPACE - 1 ))
+  sleep 0.02
+  if [ $SPACE -gt 0 ]; then
+    clear
+  fi
+done
+
+tput smam
+</code></pre>
+
+<p>And then type <code>./flow_text &lt;text-file&gt;</code></p>
+
+    </div>
+</section>
+
+    </body>
+</html>
