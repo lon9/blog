@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Github on blog</title>
-    <link>http://example.org/tags/github/</link>
+    <link>https://lon9.github.io/blog/tags/github/</link>
     <description>Recent content in Github on blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 10 Oct 2015 22:16:32 +0900</lastBuildDate>
     
-	<atom:link href="http://example.org/tags/github/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lon9.github.io/blog/tags/github/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Push submodules together with main module</title>
-      <link>http://example.org/post/push-submodules-together-with-main-module/</link>
+      <link>https://lon9.github.io/blog/post/push-submodules-together-with-main-module/</link>
       <pubDate>Sat, 10 Oct 2015 22:16:32 +0900</pubDate>
       
-      <guid>http://example.org/post/push-submodules-together-with-main-module/</guid>
+      <guid>https://lon9.github.io/blog/post/push-submodules-together-with-main-module/</guid>
       <description>This blog is controlled as submodule of hugo, CMS written with Golang, on Github. So I want to push this blog with main CMS module, when I write a post and build blog templates.
 Then I wrote a ShellScript to do this.
 #!/bin/sh # For pushing to Github CMDNAME=`basename $0` MSG=&amp;quot;Content updated&amp;quot; USAGE=&amp;quot;Usage :$CMDNAME [-m &amp;lt;commit-message&amp;gt;]&amp;quot; while : do case $1 in -m) shift if [ &amp;quot;$1&amp;quot; = &amp;quot;&amp;quot; ]; then echo &amp;quot;$USAGE&amp;quot; 1&amp;gt;&amp;amp;2 exit 1 else MSG=$1 fi break ;; --)shift break ;; -*) echo &amp;quot;$USAGE&amp;quot; 1&amp;gt;&amp;amp;2 exit 1 ;; *) break ;; esac done echo &amp;quot;Commit submodules.</description>

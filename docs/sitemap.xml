@@ -3,69 +3,69 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/post/how-to-flow-text-in-shell/</loc>
+    <loc>https://lon9.github.io/blog/post/how-to-flow-text-in-shell/</loc>
     <lastmod>2015-11-19T01:28:32+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/post/how-to-use-twitter-streaming-api-with-go/</loc>
+    <loc>https://lon9.github.io/blog/post/how-to-use-twitter-streaming-api-with-go/</loc>
     <lastmod>2015-11-19T00:23:49+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/post/push-submodules-together-with-main-module/</loc>
+    <loc>https://lon9.github.io/blog/post/push-submodules-together-with-main-module/</loc>
     <lastmod>2015-10-10T22:16:32+09:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>https://lon9.github.io/blog/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/tags/git/</loc>
-    <lastmod>2015-10-10T22:16:32+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.org/tags/github/</loc>
+    <loc>https://lon9.github.io/blog/tags/git/</loc>
     <lastmod>2015-10-10T22:16:32+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/tags/go/</loc>
+    <loc>https://lon9.github.io/blog/tags/github/</loc>
+    <lastmod>2015-10-10T22:16:32+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://lon9.github.io/blog/tags/go/</loc>
     <lastmod>2015-11-19T00:23:49+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/post/</loc>
+    <loc>https://lon9.github.io/blog/post/</loc>
     <lastmod>2015-11-19T01:28:32+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/categories/programming/</loc>
+    <loc>https://lon9.github.io/blog/categories/programming/</loc>
     <lastmod>2015-11-19T01:28:32+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/tags/shellscript/</loc>
+    <loc>https://lon9.github.io/blog/tags/shellscript/</loc>
     <lastmod>2015-11-19T01:28:32+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://lon9.github.io/blog/tags/</loc>
     <lastmod>2015-10-10T22:16:32+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>https://lon9.github.io/blog/</loc>
     <lastmod>2015-11-19T01:28:32+09:00</lastmod>
     <priority>0</priority>
   </url>
