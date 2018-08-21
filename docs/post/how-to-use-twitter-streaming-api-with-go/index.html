@@ -9,11 +9,12 @@
 
         <title>How To Use Twitter Streaming API With Go</title>
 
+        <link rel="stylesheet" href="https://lon9.github.io/blog/css/syntax.css">
         <link rel="stylesheet" href="https://lon9.github.io/blog/css/stylesheet.css">
     </head>
     <body>
         <section id="page-title">
-            <h1><a href="/">blog</a></h1>
+          <h1><a href="https://lon9.github.io/blog/">blog</a></h1>
         </section>
 
 
@@ -25,36 +26,33 @@
     </div>
     <div class="blog-post-content">
         <p><a href="https://github.com/ChimeraCoder/anaconda">ChimeraCoder/anaconda</a> is Twitter API client written with Golang.  This library support Twitter Streaming API, Here is a example for using Twitter Streaming API</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
 
-<pre><code class="language-go">package main
+<span class="kn">import</span><span class="p">(</span>
+    <span class="s">&#34;github.com/ChimeraCoder/anaconda&#34;</span>
+    <span class="s">&#34;net/url&#34;</span>
+    <span class="s">&#34;fmt&#34;</span>
+<span class="p">)</span>
 
-import(
-    &quot;github.com/ChimeraCoder/anaconda&quot;
-    &quot;net/url&quot;
-    &quot;fmt&quot;
-)
+<span class="kd">func</span> <span class="nx">main</span><span class="p">(){</span>
+    <span class="nx">anaconda</span><span class="p">.</span><span class="nx">SetConsumerKey</span><span class="p">(&lt;</span><span class="nx">Consumer</span> <span class="nx">Key</span><span class="p">&gt;)</span>
+    <span class="nx">anaconda</span><span class="p">.</span><span class="nx">SetConsumerSecret</span><span class="p">(&lt;</span><span class="nx">Consumer</span> <span class="nx">Secret</span><span class="p">&gt;)</span>
+    <span class="nx">client</span> <span class="o">:=</span> <span class="nx">anaconda</span><span class="p">.</span><span class="nx">NewTwitterApi</span><span class="p">(&lt;</span><span class="nx">Access</span> <span class="nx">Token</span><span class="p">&gt;,</span> <span class="p">&lt;</span><span class="nx">Access</span> <span class="nx">Token</span> <span class="nx">Secret</span><span class="p">&gt;)</span>
 
-func main(){
-    anaconda.SetConsumerKey(&lt;Consumer Key&gt;)
-    anaconda.SetConsumerSecret(&lt;Consumer Secret&gt;)
-    client := anaconda.NewTwitterApi(&lt;Access Token&gt;, &lt;Access Token Secret&gt;)
+    <span class="c1">// Setting parameter using url.Values
+</span><span class="c1"></span>    <span class="nx">v</span> <span class="o">:=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">Values</span><span class="p">{}</span>
+    <span class="nx">v</span><span class="p">.</span><span class="nx">Set</span><span class="p">(</span><span class="s">&#34;locations&#34;</span><span class="p">,</span> <span class="s">&#34;&lt;Locations&gt;&#34;</span><span class="p">)</span> <span class="c1">// or v.Set(&#34;track&#34;, &#34;&lt;track&gt;&#34;)
+</span><span class="c1"></span>    <span class="nx">s</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">PublicFilterStream</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
 
-    // Setting parameter using url.Values
-    v := url.Values{}
-    v.Set(&quot;locations&quot;, &quot;&lt;Locations&gt;&quot;) // or v.Set(&quot;track&quot;, &quot;&lt;track&gt;&quot;)
-    s := client.PublicFilterStream(v)
-
-    for{
-      item := &lt;-s.C
-      switch status := item.(type){
-      case anaconda.Tweet:
-        fmt.Println(status.Text)     
-			deafult:
-      }
-    }
-}
-</code></pre>
-
+    <span class="k">for</span><span class="p">{</span>
+      <span class="nx">item</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">s</span><span class="p">.</span><span class="nx">C</span>
+      <span class="k">switch</span> <span class="nx">status</span> <span class="o">:=</span> <span class="nx">item</span><span class="p">.(</span><span class="kd">type</span><span class="p">){</span>
+      <span class="k">case</span> <span class="nx">anaconda</span><span class="p">.</span><span class="nx">Tweet</span><span class="p">:</span>
+        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">status</span><span class="p">.</span><span class="nx">Text</span><span class="p">)</span>     
+			<span class="nx">deafult</span><span class="p">:</span>
+      <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
 <p>That&rsquo;s it.<br />
 It using goroutine, so we can take tweet whenever we like.</p>
 

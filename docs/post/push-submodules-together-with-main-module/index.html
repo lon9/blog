@@ -9,11 +9,12 @@
 
         <title>Push submodules together with main module</title>
 
+        <link rel="stylesheet" href="https://lon9.github.io/blog/css/syntax.css">
         <link rel="stylesheet" href="https://lon9.github.io/blog/css/stylesheet.css">
     </head>
     <body>
         <section id="page-title">
-            <h1><a href="/">blog</a></h1>
+          <h1><a href="https://lon9.github.io/blog/">blog</a></h1>
         </section>
 
 
@@ -26,52 +27,49 @@
     <div class="blog-post-content">
         <p>This blog is controlled as submodule of <code>hugo</code>, CMS written with Golang, on Github.  So I want to push this blog with main CMS module, when I write a post and build blog templates.<br />
 Then I wrote a ShellScript to do this.</p>
+<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/sh
+</span><span class="cp"></span>
+<span class="c1"># For pushing to Github
+</span><span class="c1"></span>
+<span class="nv">CMDNAME</span><span class="o">=</span><span class="sb">`</span>basename <span class="nv">$0</span><span class="sb">`</span>
+<span class="nv">MSG</span><span class="o">=</span><span class="s2">&#34;Content updated&#34;</span>
+<span class="nv">USAGE</span><span class="o">=</span><span class="s2">&#34;Usage :</span><span class="nv">$CMDNAME</span><span class="s2"> [-m &lt;commit-message&gt;]&#34;</span>
 
-<pre><code class="language-sh">#!/bin/sh
 
-# For pushing to Github
+<span class="k">while</span> :
+<span class="k">do</span>
+  <span class="k">case</span> <span class="nv">$1</span> in
+    -m<span class="o">)</span> <span class="nb">shift</span>
+      <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$USAGE</span><span class="s2">&#34;</span> <span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+        <span class="nb">exit</span> <span class="m">1</span>
+      <span class="k">else</span>
+        <span class="nv">MSG</span><span class="o">=</span><span class="nv">$1</span>
+      <span class="k">fi</span>
+      <span class="nb">break</span>
+      <span class="p">;;</span>
+    --<span class="o">)</span><span class="nb">shift</span>
+      <span class="nb">break</span>
+      <span class="p">;;</span>
+    -*<span class="o">)</span> <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$USAGE</span><span class="s2">&#34;</span> <span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+      <span class="nb">exit</span> <span class="m">1</span>
+      <span class="p">;;</span>
+    *<span class="o">)</span> <span class="nb">break</span>
+      <span class="p">;;</span>
+  <span class="k">esac</span>
+<span class="k">done</span>
 
-CMDNAME=`basename $0`
-MSG=&quot;Content updated&quot;
-USAGE=&quot;Usage :$CMDNAME [-m &lt;commit-message&gt;]&quot;
-
-
-while :
-do
-  case $1 in
-    -m) shift
-      if [ &quot;$1&quot; = &quot;&quot; ]; then
-        echo &quot;$USAGE&quot; 1&gt;&amp;2
-        exit 1
-      else
-        MSG=$1
-      fi
-      break
-      ;;
-    --)shift
-      break
-      ;;
-    -*) echo &quot;$USAGE&quot; 1&gt;&amp;2
-      exit 1
-      ;;
-    *) break
-      ;;
-  esac
-done
-
-echo &quot;Commit submodules...&quot;
+<span class="nb">echo</span> <span class="s2">&#34;Commit submodules...&#34;</span>
 git submodule foreach git add -A
-git submodule foreach git commit -m &quot;$MSG&quot;
+git submodule foreach git commit -m <span class="s2">&#34;</span><span class="nv">$MSG</span><span class="s2">&#34;</span>
 
-echo &quot;Commit main module...&quot;
+<span class="nb">echo</span> <span class="s2">&#34;Commit main module...&#34;</span>
 git add -A
-git commit -m &quot;$MSG&quot;
+git commit -m <span class="s2">&#34;</span><span class="nv">$MSG</span><span class="s2">&#34;</span>
 
-echo &quot;Push all&quot;
+<span class="nb">echo</span> <span class="s2">&#34;Push all&#34;</span>
 git submodule foreach git push -u origin master
-git push -u origin master
-</code></pre>
-
+git push -u origin master</code></pre></div>
 <p><code>-m</code> option allow you to add commit message like this.</p>
 
 <p><code>./push -m &quot;First commit&quot;</code></p>
