@@ -3,6 +3,8 @@ languageCode = "en-us"
 title = "blog"
 theme = "elephants"
 publishDir = "docs"
+pygmentsCodeFences=true
+pygmentsUseClasses=true
 
 [params]
   sitename = "blog"
