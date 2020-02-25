@@ -13,20 +13,20 @@
     
     <item>
       <title>How To Flow Text In Shell</title>
-      <link>https://lon9.github.io/blog/post/how-to-flow-text-in-shell/</link>
+      <link>https://lon9.github.io/blog/how-to-flow-text-in-shell/</link>
       <pubDate>Thu, 19 Nov 2015 01:28:32 +0900</pubDate>
       
-      <guid>https://lon9.github.io/blog/post/how-to-flow-text-in-shell/</guid>
+      <guid>https://lon9.github.io/blog/how-to-flow-text-in-shell/</guid>
       <description>This snippet flows some text in your shell. It use in the last of presentation or something.
 #!/bin/bash  CMD_NAME=`basename $0` SPACE=`tput cols` FILE_NAME= if [ $# -ne 1 ]; then echo &amp;#34;USAGE: $CMD_NAMEfile_name&amp;#34; exit 1 fi # Trapping signals trap &amp;#39;tput smam; exit 1&amp;#39; 1 2 3 15 FILE_NAME=$1 while [ $SPACE -gt 0 ]; do while IFS=&amp;#39;&amp;#39; read LINE do [[ $SPACE &amp;gt; 0 ]] &amp;amp;&amp;amp; printf &amp;#34;%${SPACE}s&amp;#34; &amp;#39; &amp;#39; tput rmam; printf &amp;#34;%s\n&amp;#34; &amp;#34;$LINE&amp;#34; done &amp;lt; $FILE_NAME SPACE=$(( SPACE - 1 )) sleep 0.</description>
     </item>
     
     <item>
       <title>Push submodules together with main module</title>
-      <link>https://lon9.github.io/blog/post/push-submodules-together-with-main-module/</link>
+      <link>https://lon9.github.io/blog/push-submodules-together-with-main-module/</link>
       <pubDate>Sat, 10 Oct 2015 22:16:32 +0900</pubDate>
       
-      <guid>https://lon9.github.io/blog/post/push-submodules-together-with-main-module/</guid>
+      <guid>https://lon9.github.io/blog/push-submodules-together-with-main-module/</guid>
       <description>This blog is controlled as submodule of hugo, CMS written with Golang, on Github. So I want to push this blog with main CMS module, when I write a post and build blog templates. Then I wrote a ShellScript to do this.
 #!/bin/sh  # For pushing to Github CMDNAME=`basename $0` MSG=&amp;#34;Content updated&amp;#34; USAGE=&amp;#34;Usage :$CMDNAME[-m &amp;lt;commit-message&amp;gt;]&amp;#34; while : do case $1 in -m) shift if [ &amp;#34;$1&amp;#34; = &amp;#34;&amp;#34; ]; then echo &amp;#34;$USAGE&amp;#34; 1&amp;gt;&amp;amp;2 exit 1 else MSG=$1 fi break ;; --)shift break ;; -*) echo &amp;#34;$USAGE&amp;#34; 1&amp;gt;&amp;amp;2 exit 1 ;; *) break ;; esac done echo &amp;#34;Commit submodules.</description>
     </item>

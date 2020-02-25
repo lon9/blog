@@ -13,10 +13,10 @@
     
     <item>
       <title>How To Use Twitter Streaming API With Go</title>
-      <link>https://lon9.github.io/blog/post/how-to-use-twitter-streaming-api-with-go/</link>
+      <link>https://lon9.github.io/blog/how-to-use-twitter-streaming-api-with-go/</link>
       <pubDate>Thu, 19 Nov 2015 00:23:49 +0900</pubDate>
       
-      <guid>https://lon9.github.io/blog/post/how-to-use-twitter-streaming-api-with-go/</guid>
+      <guid>https://lon9.github.io/blog/how-to-use-twitter-streaming-api-with-go/</guid>
       <description>ChimeraCoder/anaconda is Twitter API client written with Golang. This library support Twitter Streaming API, Here is a example for using Twitter Streaming API
 package main import( &amp;#34;github.com/ChimeraCoder/anaconda&amp;#34; &amp;#34;net/url&amp;#34; &amp;#34;fmt&amp;#34; ) func main(){ anaconda.SetConsumerKey(&amp;lt;Consumer Key&amp;gt;) anaconda.SetConsumerSecret(&amp;lt;Consumer Secret&amp;gt;) client := anaconda.NewTwitterApi(&amp;lt;Access Token&amp;gt;, &amp;lt;Access Token Secret&amp;gt;) // Setting parameter using url.Values  v := url.Values{} v.Set(&amp;#34;locations&amp;#34;, &amp;#34;&amp;lt;Locations&amp;gt;&amp;#34;) // or v.Set(&amp;#34;track&amp;#34;, &amp;#34;&amp;lt;track&amp;gt;&amp;#34;)  s := client.PublicFilterStream(v) for{ item := &amp;lt;-s.C switch status := item.(type){ case anaconda.</description>
     </item>
