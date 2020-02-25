@@ -1,20 +1,19 @@
-+++
-categories = [
+---
+categories: [
   "Programming",
 ]
-date = "2015-10-10T22:16:32+09:00"
-description = "The way to push submodules together with main modules with ShellScript."
-tags = [
+date: "2015-10-10T22:16:32+09:00"
+description: "The way to push submodules together with main modules with ShellScript."
+tags: [
   "Git",
   "Github",
   "ShellScript"
 ]
-title = "Push submodules together with main module"
+title: "Push submodules together with main module"
+---
 
-+++
-
-This blog is controlled as submodule of `hugo`, CMS written with Golang, on Github.  So I want to push this blog with main CMS module, when I write a post and build blog templates.   
-Then I wrote a ShellScript to do this. 
+This blog is controlled as submodule of `hugo`, CMS written with Golang, on Github.  So I want to push this blog with main CMS module, when I write a post and build blog templates.
+Then I wrote a ShellScript to do this.
 
 ```sh
 #!/bin/sh
@@ -62,8 +61,8 @@ git submodule foreach git push -u origin master
 git push -u origin master
 ```
 
-`-m` option allow you to add commit message like this.   
+`-m` option allow you to add commit message like this.
 
-`./push -m "First commit"`   
+`./push -m "First commit"`
 
 This will write same message for sub and main modules.

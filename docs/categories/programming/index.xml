@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>programming on blog</title>
+    <title>Programming on blog</title>
     <link>https://lon9.github.io/blog/categories/programming/</link>
-    <description>Recent content in programming on blog</description>
+    <description>Recent content in Programming on blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 19 Nov 2015 01:28:32 +0900</lastBuildDate>
@@ -37,8 +37,7 @@ package main import( &amp;#34;github.com/ChimeraCoder/anaconda&amp;#34; &amp;#34
       <pubDate>Sat, 10 Oct 2015 22:16:32 +0900</pubDate>
       
       <guid>https://lon9.github.io/blog/post/push-submodules-together-with-main-module/</guid>
-      <description>This blog is controlled as submodule of hugo, CMS written with Golang, on Github. So I want to push this blog with main CMS module, when I write a post and build blog templates.
-Then I wrote a ShellScript to do this.
+      <description>This blog is controlled as submodule of hugo, CMS written with Golang, on Github. So I want to push this blog with main CMS module, when I write a post and build blog templates. Then I wrote a ShellScript to do this.
 #!/bin/sh  # For pushing to Github CMDNAME=`basename $0` MSG=&amp;#34;Content updated&amp;#34; USAGE=&amp;#34;Usage :$CMDNAME[-m &amp;lt;commit-message&amp;gt;]&amp;#34; while : do case $1 in -m) shift if [ &amp;#34;$1&amp;#34; = &amp;#34;&amp;#34; ]; then echo &amp;#34;$USAGE&amp;#34; 1&amp;gt;&amp;amp;2 exit 1 else MSG=$1 fi break ;; --)shift break ;; -*) echo &amp;#34;$USAGE&amp;#34; 1&amp;gt;&amp;amp;2 exit 1 ;; *) break ;; esac done echo &amp;#34;Commit submodules.</description>
     </item>
     

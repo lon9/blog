@@ -1,15 +1,14 @@
-+++
-categories = [
-  "programming"
+---
+categories: [
+  "Programming"
 ]
-date = "2015-11-19T01:28:32+09:00"
-description = "ShellScript for flowing text in the shell"
-tags = [
+date: "2015-11-19T01:28:32+09:00"
+description: "ShellScript for flowing text in the shell"
+tags: [
   "ShellScript"
 ]
-title = "How To Flow Text In Shell"
-
-+++
+title: "How To Flow Text In Shell"
+---
 
 [![https://gyazo.com/7dda31251c37e8fd41439324b423160d](https://i.gyazo.com/7dda31251c37e8fd41439324b423160d.gif)](https://gyazo.com/7dda31251c37e8fd41439324b423160d)
 
