@@ -25,8 +25,7 @@
         November 19, 2015
     </div>
     <div class="blog-post-content">
-        <p><a href="https://gyazo.com/7dda31251c37e8fd41439324b423160d"><img src="https://i.gyazo.com/7dda31251c37e8fd41439324b423160d.gif" alt="https://gyazo.com/7dda31251c37e8fd41439324b423160d" /></a></p>
-
+        <p><a href="https://gyazo.com/7dda31251c37e8fd41439324b423160d"><img src="https://i.gyazo.com/7dda31251c37e8fd41439324b423160d.gif" alt="https://gyazo.com/7dda31251c37e8fd41439324b423160d"></a></p>
 <p>This snippet flows some text in your shell.  It use in the last of presentation or something.</p>
 <div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
 </span><span class="cp"></span>
@@ -39,8 +38,8 @@
   <span class="nb">exit</span> <span class="m">1</span>
 <span class="k">fi</span>
 
-<span class="c1"># Trapping signals
-</span><span class="c1"></span><span class="nb">trap</span> <span class="s1">&#39;tput smam; exit 1&#39;</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">15</span>
+<span class="c1"># Trapping signals</span>
+<span class="nb">trap</span> <span class="s1">&#39;tput smam; exit 1&#39;</span> <span class="m">1</span> <span class="m">2</span> <span class="m">3</span> <span class="m">15</span>
 
 <span class="nv">FILE_NAME</span><span class="o">=</span><span class="nv">$1</span>
 
@@ -52,14 +51,14 @@
     tput rmam<span class="p">;</span> <span class="nb">printf</span> <span class="s2">&#34;%s\n&#34;</span> <span class="s2">&#34;</span><span class="nv">$LINE</span><span class="s2">&#34;</span>
   <span class="k">done</span> &lt; <span class="nv">$FILE_NAME</span>
   <span class="nv">SPACE</span><span class="o">=</span><span class="k">$((</span> SPACE <span class="o">-</span> <span class="m">1</span> <span class="k">))</span>
-  sleep <span class="m">0</span>.02
+  sleep 0.02
   <span class="k">if</span> <span class="o">[</span> <span class="nv">$SPACE</span> -gt <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
     clear
   <span class="k">fi</span>
 <span class="k">done</span>
 
-tput smam</code></pre></div>
-<p>And then type <code>./flow_text &lt;text-file&gt;</code></p>
+tput smam
+</code></pre></div><p>And then type <code>./flow_text &lt;text-file&gt;</code></p>
 
     </div>
 </section>

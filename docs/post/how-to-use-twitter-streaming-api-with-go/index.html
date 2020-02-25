@@ -34,26 +34,26 @@
     <span class="s">&#34;fmt&#34;</span>
 <span class="p">)</span>
 
-<span class="kd">func</span> <span class="nx">main</span><span class="p">(){</span>
-    <span class="nx">anaconda</span><span class="p">.</span><span class="nx">SetConsumerKey</span><span class="p">(&lt;</span><span class="nx">Consumer</span> <span class="nx">Key</span><span class="p">&gt;)</span>
-    <span class="nx">anaconda</span><span class="p">.</span><span class="nx">SetConsumerSecret</span><span class="p">(&lt;</span><span class="nx">Consumer</span> <span class="nx">Secret</span><span class="p">&gt;)</span>
-    <span class="nx">client</span> <span class="o">:=</span> <span class="nx">anaconda</span><span class="p">.</span><span class="nx">NewTwitterApi</span><span class="p">(&lt;</span><span class="nx">Access</span> <span class="nx">Token</span><span class="p">&gt;,</span> <span class="p">&lt;</span><span class="nx">Access</span> <span class="nx">Token</span> <span class="nx">Secret</span><span class="p">&gt;)</span>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">(){</span>
+    <span class="nx">anaconda</span><span class="p">.</span><span class="nf">SetConsumerKey</span><span class="p">(&lt;</span><span class="nx">Consumer</span> <span class="nx">Key</span><span class="p">&gt;)</span>
+    <span class="nx">anaconda</span><span class="p">.</span><span class="nf">SetConsumerSecret</span><span class="p">(&lt;</span><span class="nx">Consumer</span> <span class="nx">Secret</span><span class="p">&gt;)</span>
+    <span class="nx">client</span> <span class="o">:=</span> <span class="nx">anaconda</span><span class="p">.</span><span class="nf">NewTwitterApi</span><span class="p">(&lt;</span><span class="nx">Access</span> <span class="nx">Token</span><span class="p">&gt;,</span> <span class="p">&lt;</span><span class="nx">Access</span> <span class="nx">Token</span> <span class="nx">Secret</span><span class="p">&gt;)</span>
 
     <span class="c1">// Setting parameter using url.Values
 </span><span class="c1"></span>    <span class="nx">v</span> <span class="o">:=</span> <span class="nx">url</span><span class="p">.</span><span class="nx">Values</span><span class="p">{}</span>
-    <span class="nx">v</span><span class="p">.</span><span class="nx">Set</span><span class="p">(</span><span class="s">&#34;locations&#34;</span><span class="p">,</span> <span class="s">&#34;&lt;Locations&gt;&#34;</span><span class="p">)</span> <span class="c1">// or v.Set(&#34;track&#34;, &#34;&lt;track&gt;&#34;)
-</span><span class="c1"></span>    <span class="nx">s</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">PublicFilterStream</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
+    <span class="nx">v</span><span class="p">.</span><span class="nf">Set</span><span class="p">(</span><span class="s">&#34;locations&#34;</span><span class="p">,</span> <span class="s">&#34;&lt;Locations&gt;&#34;</span><span class="p">)</span> <span class="c1">// or v.Set(&#34;track&#34;, &#34;&lt;track&gt;&#34;)
+</span><span class="c1"></span>    <span class="nx">s</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nf">PublicFilterStream</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span>
 
     <span class="k">for</span><span class="p">{</span>
       <span class="nx">item</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">s</span><span class="p">.</span><span class="nx">C</span>
       <span class="k">switch</span> <span class="nx">status</span> <span class="o">:=</span> <span class="nx">item</span><span class="p">.(</span><span class="kd">type</span><span class="p">){</span>
       <span class="k">case</span> <span class="nx">anaconda</span><span class="p">.</span><span class="nx">Tweet</span><span class="p">:</span>
-        <span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">status</span><span class="p">.</span><span class="nx">Text</span><span class="p">)</span>     
+        <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">status</span><span class="p">.</span><span class="nx">Text</span><span class="p">)</span>     
 			<span class="nx">deafult</span><span class="p">:</span>
       <span class="p">}</span>
     <span class="p">}</span>
-<span class="p">}</span></code></pre></div>
-<p>That&rsquo;s it.<br />
+<span class="p">}</span>
+</code></pre></div><p>That&rsquo;s it.<br>
 It using goroutine, so we can take tweet whenever we like.</p>
 
     </div>

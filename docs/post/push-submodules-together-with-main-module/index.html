@@ -25,12 +25,12 @@
         October 10, 2015
     </div>
     <div class="blog-post-content">
-        <p>This blog is controlled as submodule of <code>hugo</code>, CMS written with Golang, on Github.  So I want to push this blog with main CMS module, when I write a post and build blog templates.<br />
+        <p>This blog is controlled as submodule of <code>hugo</code>, CMS written with Golang, on Github.  So I want to push this blog with main CMS module, when I write a post and build blog templates.<br>
 Then I wrote a ShellScript to do this.</p>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="cp">#!/bin/sh
 </span><span class="cp"></span>
-<span class="c1"># For pushing to Github
-</span><span class="c1"></span>
+<span class="c1"># For pushing to Github</span>
+
 <span class="nv">CMDNAME</span><span class="o">=</span><span class="sb">`</span>basename <span class="nv">$0</span><span class="sb">`</span>
 <span class="nv">MSG</span><span class="o">=</span><span class="s2">&#34;Content updated&#34;</span>
 <span class="nv">USAGE</span><span class="o">=</span><span class="s2">&#34;Usage :</span><span class="nv">$CMDNAME</span><span class="s2"> [-m &lt;commit-message&gt;]&#34;</span>
@@ -41,7 +41,7 @@ Then I wrote a ShellScript to do this.</p>
   <span class="k">case</span> <span class="nv">$1</span> in
     -m<span class="o">)</span> <span class="nb">shift</span>
       <span class="k">if</span> <span class="o">[</span> <span class="s2">&#34;</span><span class="nv">$1</span><span class="s2">&#34;</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-        <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$USAGE</span><span class="s2">&#34;</span> <span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+        <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$USAGE</span><span class="s2">&#34;</span> 1&gt;<span class="p">&amp;</span><span class="m">2</span>
         <span class="nb">exit</span> <span class="m">1</span>
       <span class="k">else</span>
         <span class="nv">MSG</span><span class="o">=</span><span class="nv">$1</span>
@@ -51,7 +51,7 @@ Then I wrote a ShellScript to do this.</p>
     --<span class="o">)</span><span class="nb">shift</span>
       <span class="nb">break</span>
       <span class="p">;;</span>
-    -*<span class="o">)</span> <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$USAGE</span><span class="s2">&#34;</span> <span class="m">1</span>&gt;<span class="p">&amp;</span><span class="m">2</span>
+    -*<span class="o">)</span> <span class="nb">echo</span> <span class="s2">&#34;</span><span class="nv">$USAGE</span><span class="s2">&#34;</span> 1&gt;<span class="p">&amp;</span><span class="m">2</span>
       <span class="nb">exit</span> <span class="m">1</span>
       <span class="p">;;</span>
     *<span class="o">)</span> <span class="nb">break</span>
@@ -69,11 +69,9 @@ git commit -m <span class="s2">&#34;</span><span class="nv">$MSG</span><span cla
 
 <span class="nb">echo</span> <span class="s2">&#34;Push all&#34;</span>
 git submodule foreach git push -u origin master
-git push -u origin master</code></pre></div>
-<p><code>-m</code> option allow you to add commit message like this.</p>
-
+git push -u origin master
+</code></pre></div><p><code>-m</code> option allow you to add commit message like this.</p>
 <p><code>./push -m &quot;First commit&quot;</code></p>
-
 <p>This will write same message for sub and main modules.</p>
 
     </div>
